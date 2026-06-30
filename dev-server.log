@@ -1,0 +1,17 @@
+
+> dsa-visualizer@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.65:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 6.2s (601 modules)
+ GET / 200 in 6759ms
+ ✓ Compiled /_not-found in 460ms (588 modules)
+ GET /sw.js 404 in 692ms
+ GET / 200 in 259ms
+ GET /sw.js 404 in 65ms
