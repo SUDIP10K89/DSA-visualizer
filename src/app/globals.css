@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --background: #f7f8f5;
-  --foreground: #172026;
+  --background: #f4f7f6;
+  --foreground: #13202a;
 }
 
 * {
@@ -20,10 +20,21 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 18% 8%, rgba(47, 128, 237, 0.12), transparent 24rem),
-    radial-gradient(circle at 92% 0%, rgba(17, 153, 142, 0.10), transparent 22rem),
-    linear-gradient(180deg, #f7f8f5 0%, #eef3f1 100%);
+    linear-gradient(180deg, #f6f8f7 0%, #edf2f1 100%);
   color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.45;
 }
 
 button,
@@ -37,6 +48,6 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #0f766e;
   outline-offset: 2px;
 }

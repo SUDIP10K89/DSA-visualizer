@@ -14,9 +14,9 @@ function iconFor(meta: AlgoMeta) {
 
 function Metric({ label, value }: { label: string; value: number | string }) {
   return (
-    <div className="rounded-md border border-slate-200 bg-slate-50 p-2">
-      <p className="text-[11px] font-medium text-slate-500">{label}</p>
-      <p className="text-lg font-semibold text-slate-950">{value}</p>
+    <div className="border border-slate-300 bg-slate-50 p-2">
+      <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-500">{label}</p>
+      <p className="mt-1 text-lg font-black text-slate-950">{value}</p>
     </div>
   );
 }
@@ -28,7 +28,7 @@ function ControlButton({ children, title, onClick }: { children: React.ReactNode
       title={title}
       aria-label={title}
       onClick={onClick}
-      className="grid h-9 w-9 place-items-center rounded-md border border-slate-200 bg-white text-slate-700 transition hover:border-teal-500 hover:text-teal-700"
+      className="grid h-9 w-9 place-items-center border border-slate-300 bg-white text-slate-700 transition hover:border-teal-700 hover:text-teal-700"
     >
       {children}
     </button>
@@ -67,14 +67,14 @@ export function AlgorithmVisualizer({ algorithmId, values, target, speed, versio
   const progress = steps.length <= 1 ? 100 : Math.round((index / (steps.length - 1)) * 100);
 
   return (
-    <section className="flex h-full min-h-[520px] flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-3">
+    <section className="flex h-full min-h-[520px] flex-col overflow-hidden border border-slate-900/10 bg-white">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-300 px-4 py-3">
         <div>
-          <div className="flex items-center gap-2 text-sm font-semibold text-slate-950">
+          <div className="flex items-center gap-2 text-sm font-black text-slate-950">
             {iconFor(meta)}
             {meta.name}
           </div>
-          <p className="text-xs text-slate-500">{meta.category}</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">{meta.category}</p>
         </div>
         <div className="flex items-center gap-1.5">
           <ControlButton title={running ? "Pause" : "Start"} onClick={() => setRunning((value) => !value)}>
@@ -89,22 +89,22 @@ export function AlgorithmVisualizer({ algorithmId, values, target, speed, versio
         </div>
       </div>
 
-      <div className="h-1 bg-slate-100">
-        <div className="h-full bg-teal-600 transition-all duration-300" style={{ width: `${progress}%` }} />
+      <div className="h-2 bg-slate-100">
+        <div className="h-full bg-teal-700 transition-all duration-300" style={{ width: `${progress}%` }} />
       </div>
 
       <div className={`grid flex-1 gap-0 ${compact ? "grid-cols-1" : "lg:grid-cols-[minmax(0,1.35fr)_minmax(320px,0.65fr)]"}`}>
-        <div className="flex min-h-[360px] items-center justify-center bg-[#f9fbf8] p-4">
+        <div className="flex min-h-[360px] items-center justify-center bg-slate-50 p-4">
           <Visual step={step} meta={meta} />
         </div>
-        <aside className="border-t border-slate-200 bg-white p-4 lg:border-l lg:border-t-0">
-          <div className="mb-3 flex items-center justify-between text-xs font-medium uppercase text-slate-500">
+        <aside className="border-t border-slate-300 bg-white p-4 lg:border-l lg:border-t-0">
+          <div className="mb-3 flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
             <span>Step {index + 1} of {steps.length}</span>
             <span>{step.operations} ops</span>
           </div>
-          <h2 className="text-lg font-semibold text-slate-950">{step.title}</h2>
+          <h2 className="text-lg font-black text-slate-950">{step.title}</h2>
           <p className="mt-2 text-sm leading-6 text-slate-650">{step.note}</p>
-          <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-950">
+          <div className="mt-4 border border-amber-300 bg-amber-50 p-3 text-sm font-medium text-amber-950">
             {step.insight}
           </div>
           <div className="mt-4 grid grid-cols-3 gap-2">
