@@ -43,9 +43,9 @@ export default function Home() {
             <button type="button" onClick={generateRandom} className="inline-flex h-11 items-center gap-2 border border-slate-900 bg-slate-950 px-4 text-sm font-bold text-white transition hover:bg-teal-700">
               <Shuffle className="h-4 w-4" /> Random
             </button>
-            <button type="button" onClick={() => setVersion((value) => value + 1)} className="inline-flex h-11 items-center gap-2 border border-slate-300 bg-white px-4 text-sm font-bold text-slate-800 transition hover:border-teal-700 hover:text-teal-700">
+            {/* <button type="button" onClick={() => setVersion((value) => value + 1)} className="inline-flex h-11 items-center gap-2 border border-slate-300 bg-white px-4 text-sm font-bold text-slate-800 transition hover:border-teal-700 hover:text-teal-700">
               <ListRestart className="h-4 w-4" /> Apply Input
-            </button>
+            </button> */}
           </div>
         </header>
 
